@@ -4,6 +4,7 @@
   <title>Page Title</title>
   <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 <style>
   .arjs-loader {
     height: 100%;
@@ -36,6 +37,8 @@
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+    gesture-detector
+    id="scene"
   >
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
@@ -47,6 +50,9 @@
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
     >
         <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
         <a-entity
@@ -55,6 +61,8 @@
             position="0 0 0"
             light="type: directional; color: #FFF; intensity: 0.6"
             position="-0.5 1 1"
+            class="clickable"
+            gesture-handler="minScale: 1; maxScale: 100"
         >
         </a-entity>
     </a-nft>
