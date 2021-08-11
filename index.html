@@ -39,6 +39,7 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     gesture-detector
     id="scene"
+    light="defaultLightsEnabled: false"
   >
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
@@ -57,11 +58,11 @@
         <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
         <a-entity
             gltf-model="url(20210811_30_6.glb)"
-            scale="500 500 500"
+            scale="400 400 400"
             position="100 0 -100"
             light="type: directional; color: #FFF; intensity: 0.6"
             class="clickable"
-            gesture-handler="minScale: 1; maxScale: 100"
+            gesture-handler="minScale: 0.25; maxScale: 10"
         >
         </a-entity>
     </a-nft>
