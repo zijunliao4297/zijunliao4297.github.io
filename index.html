@@ -19,23 +19,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  } 
+  }  
 </style>
 </head>  
 <body style="margin : 0px; overflow: hidden;">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script>
+  <script src="loading.js"></script>
   <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
   <div class="arjs-loader">
     <div class="word">LOADING...</div>
     <div class="overlay"></div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script>
-    <script src="loading.js"></script>
   </div>
   <!-- a-frame scene -->
   <a-scene
