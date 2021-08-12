@@ -8,31 +8,29 @@
   <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="style.css">
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }  
-</style>
+  <style>
+    .arjs-loader {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }  
+  </style>
 </head>  
-<body style="margin : 0px; overflow: hidden;">
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script>
-  <script src="loading.js"></script>
-  <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
+<body style="margin : 0px; overflow: hidden;">  
   <div class="arjs-loader">
     <div class="word">LOADING...</div>
     <div class="overlay"></div>
   </div>
-  <!-- a-frame scene -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script>
+  <script src="loading.js"></script>  
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
@@ -43,33 +41,28 @@
     light="defaultLightsEnabled: false"
     Precision = "medium"
   >
-    <!-- a-nft is the anchor that defines an Image Tracking entity -->
-    <!-- on 'url' use the path to the Image Descriptors created before. -->
-    <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-    <a-nft
-      type="nft"
-      url="d4621454"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance="10"
-      smoothThreshold="1"
-      raycaster="objects: .clickable"
-      emitevents="true"
-      cursor="fuse: false; rayOrigin: mouse;"
-    >
-        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-        <a-entity
-            gltf-model="url(20210811_30_6-1.glb)"
-            scale="40 40 40"
-            position="20 0 -20"
-            light="type: ambient; color: #FFF"
-            class="clickable"
-            gesture-handler="minScale: 0.25; maxScale: 10"
-        >
-        </a-entity>
-    </a-nft>
-    <!-- static camera that moves according to the device movemenents -->
-    <a-entity camera></a-entity>
+  <a-nft
+    type="nft"
+    url="d4621454"
+    smooth="true"
+    smoothCount="15"
+    smoothTolerance="20"
+    smoothThreshold="5"
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+  >
+  <a-entity
+    gltf-model="url(20210811_30_6-1.glb)"
+    scale="40 40 40"
+    position="20 0 -20"
+    light="type: ambient; color: #FFF"
+    class="clickable"
+    gesture-handler="minScale: 0.25; maxScale: 10"
+  >
+  </a-entity>
+  </a-nft>
+  <a-entity camera></a-entity>
   </a-scene>
 </body>
 </html>
