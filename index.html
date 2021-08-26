@@ -45,7 +45,7 @@
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true; precision: mediump;"
+    renderer="logarithmicDepthBuffer: true; precision: high;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; sourceWidth:388; sourceHeight:351; displayWidth: 388; displayHeight: 351;"
     gesture-detector
@@ -69,8 +69,6 @@
     class="clickable"
     gesture-handler="minScale: 0.25; maxScale: 10"
   >
-  <a-entity light="type: ambient; color: #BBB"></a-entity>
-  <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
   </a-entity>
   </a-nft>
   <a-entity camera></a-entity>
