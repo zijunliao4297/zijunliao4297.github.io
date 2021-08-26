@@ -16,6 +16,7 @@
       background-color: rgba(0, 0, 0, 0.9);
       z-index: 9999;
       display: flex;
+      flex-direction:column;
       justify-content: center;
       align-items: center;
     }  
@@ -60,7 +61,7 @@
   <a-entity
     gltf-model="url(ggg_l.glb)"
     scale="0.1 0.1 0.1"
-    position="40 -100 0"
+    position="40 100 0"
     class="clickable"
     gesture-handler="minScale: 0.25; maxScale: 10"
   >
