@@ -28,9 +28,9 @@
       height: 50px;
       animation: spin 2s linear infinite;
     }
-    h1 {
+    p {
       color: white;
-      margin: 0 16 0 16;
+      margin: 0 64 0 64;
     }
     @keyframes spin {
       0% { transform: rotate(0deg); }
@@ -40,7 +40,7 @@
 </head>  
 <body style="margin : 0px; overflow: hidden;">  
   <div class="arjs-loader">
-    <h1>初次載入會花費較長時間，請耐心等候。</h1>
+    <p>初次載入會花費較長時間，請耐心等候。</p>
     <div class="loader"></div>
   </div>
   <a-scene
@@ -65,7 +65,7 @@
   <a-entity
     gltf-model="url(ggg_l.glb)"
     scale="0.1 0.1 0.1"
-    position="40 100 0"
+    position="40 0 0"
     class="clickable"
     gesture-handler="minScale: 0.25; maxScale: 10"
   >
