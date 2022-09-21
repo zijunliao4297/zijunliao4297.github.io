@@ -13,9 +13,28 @@
         cake.setAttribute("animation-mixer", "clip: slake;"); 
       }
     </script>
+    <style>
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+      }  
+    </style>
 </head>
     <body style='margin : 0px; overflow: hidden;'>
-        <button onclick="slake()">Test1</button>
+      <div class="arjs-loader">
+        <button onclick="slake()">Test2</button>
+        <p>初次載入會花費較長時間，請耐心等候。</p>
+        <div class="loader" id="test"></div>
+      </div> 
         <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
             <a-marker type='pattern' url='pattern-I.patt'>
               <a-entity id ="cake" 
@@ -27,6 +46,5 @@
               </a-entity>
             </a-marker>
         </a-scene>
-        <button onclick="slake()">Test2</button>
     </body>
 </html>
