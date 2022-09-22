@@ -5,6 +5,23 @@
     <title>Birthday Matcha Cake</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+      // var scene = document.querySelector('a-scene');
+      // const cake = document.querySelector('#cake');
+
+      // AFRAME.registerComponent('cake', {
+      //   schema: {default: ''},
+      //   init() {
+      //     this.el.addEventListener("click", (e)=> {
+      //       this.el.setAttribute("animation-mixer", "clip", "slake") 
+      //     })
+      //   }
+      // });
+      
+      function vibrate(){
+        if(("vibrate" in navigator)) navigator.vibrate(500);
+      }
+    </script>
     <style>
       .arjs-loader {
         height: 100%;
@@ -40,7 +57,7 @@
       <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
                  vr-mode-ui="enabled: false;"
                  renderer="logarithmicDepthBuffer: true; precision: high;">
-            <a-marker type='pattern' url='pattern-I.patt'>
+            <a-marker type='pattern' url='pattern-I.patt' >
               <a-entity id ="cake" 
                         position="-1 1 0" 
                         rotation="0 0 0" 
@@ -55,6 +72,7 @@
         const startButton = document.getElementById('start');
         const brandingDiv = document.getElementById('branding');
         startButton.onclick = (async () => {
+            vibrate();
             brandingDiv.style.display = 'none';
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
             const audioContext = new AudioContext();
@@ -75,20 +93,6 @@
                 window.requestAnimationFrame(onFrame);
             };
             window.requestAnimationFrame(onFrame);
-
-
-            ///
-            var scene = document.querySelector('a-scene');
-      const cake = document.querySelector('#cake');
-
-        AFRAME.registerComponent('cake', {
-          schema: {default: ''},
-          init() {
-            this.el.addEventListener("click", (e)=> {
-              this.el.setAttribute("animation-mixer", "clip", "slake") 
-            })
-          }
-          });
         });
       </script>
     </body>
