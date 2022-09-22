@@ -14,14 +14,15 @@
       init: function () {
         this.marker = document.querySelector('a-marker');
         this.cake = document.querySelector('#cake');
-        cake.addEventListener('slake', function(){
+        this.cake.addEventListener('slake', function(){
           vibrate();
         });
         this.visible = false;
       },
       tick: function () {
         if (this.marker.object3D.visible && !this.visible) {
-          vibrate();
+          // vibrate();
+          this.cake.setAttribute("animation-mixer", "clip: slake;"); 
           this.visible = true; // make sure it plays only once per visible
         } else if (!this.marker.object3D.visible) {
           this.visible = false;
@@ -50,7 +51,6 @@
 
     button {
       background-color: #FA54C0;
-      /* Green */
       border: none;
       color: white;
       padding: 16px 32px;
