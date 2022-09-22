@@ -16,13 +16,13 @@
         this.cake = document.querySelector('#cake');
         this.cake.addEventListener('slake', function(){
           vibrate();
+          this.cake.setAttribute("animation-mixer", {clip: 'slake', loop: 'once'}); 
         });
         this.visible = false;
       },
       tick: function () {
         if (this.marker.object3D.visible && !this.visible) {
-          // vibrate();
-          this.cake.setAttribute("animation-mixer", {clip: 'slake', loop: 'once'}); 
+          vibrate();
           this.visible = true; // make sure it plays only once per visible
         } else if (!this.marker.object3D.visible) {
           this.visible = false;
@@ -50,7 +50,7 @@
     }
 
     button {
-      background-color: #FA54C0;
+      background-color: #F54CA0;
       border: none;
       color: white;
       padding: 16px 32px;
