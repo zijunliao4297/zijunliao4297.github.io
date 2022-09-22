@@ -7,22 +7,25 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script>
+    var isVisible = false
     var scene = document.querySelector('a-scene');
     const cake = document.querySelector('#cake');
 
-    // AFRAME.registerComponent('cake', {
-    //   schema: {default: ''},
-    //   init() {
-    //     this.el.addEventListener("click", (e)=> {
-    //       this.el.setAttribute("animation-mixer", "clip", "slake") 
-    //     })
-    //   }
-    // });
+    AFRAME.registerComponent('cake', {
+      tick: function () {
+        if (marker.visible && !isVisible) {
+          isVisible = true;
+          vibrate();
+        } else {
+          isVisible = false;
+        }
+      }
+    });
 
-    var marker = document.querySelector('a-marker');
-    marker.addEventListener("markerFound", (e) => {
-       vibrate();
-     });
+    // var marker = document.querySelector('a-marker');
+    // marker.addEventListener("markerFound", (e) => {
+    //    vibrate();
+    //  });
 
     function vibrate() {
       if (("vibrate" in navigator)) navigator.vibrate(100);
