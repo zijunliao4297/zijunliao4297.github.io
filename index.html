@@ -9,7 +9,7 @@
       var scene = document.querySelector('a-scene');
       const cake = document.querySelector('#cake');
 
-      AFRAME.registerComponent('animation-control', {
+      AFRAME.registerComponent('cake', {
         schema: {default: ''},
         init() {
           this.el.addEventListener("click", (e)=> {
@@ -48,7 +48,8 @@
                         rotation="0 0 0" 
                         scale="5 5 5" 
                         gltf-model="url(cake.glb)" 
-                        animation-mixer="clip: idle;">
+                        animation-mixer="clip: idle;"
+                        cake>
               </a-entity>
             </a-marker>
         </a-scene>
