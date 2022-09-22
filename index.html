@@ -18,8 +18,11 @@
       //   }
       // });
       
+      var marker = document.querySelector('anchor');
+      marker.addEventListener("markerFound", (e)=>{ vibrate})
+
       function vibrate(){
-        if(("vibrate" in navigator)) navigator.vibrate(500);
+        if(("vibrate" in navigator)) navigator.vibrate(80);
       }
     </script>
     <style>
@@ -57,7 +60,7 @@
       <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
                  vr-mode-ui="enabled: false;"
                  renderer="logarithmicDepthBuffer: true; precision: high;">
-            <a-marker type='pattern' url='pattern-I.patt' >
+            <a-marker type='pattern' url='pattern-I.patt' id="anchor">
               <a-entity id ="cake" 
                         position="-1 1 0" 
                         rotation="0 0 0" 
@@ -72,7 +75,6 @@
         const startButton = document.getElementById('start');
         const brandingDiv = document.getElementById('branding');
         startButton.onclick = (async () => {
-            vibrate();
             brandingDiv.style.display = 'none';
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
             const audioContext = new AudioContext();
