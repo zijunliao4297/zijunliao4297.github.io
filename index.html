@@ -9,9 +9,14 @@
       var scene = document.querySelector('a-scene');
       const cake = document.querySelector('#cake');
 
-      function slake() {
-        cake.setAttribute("animation-mixer", "clip: slake;"); 
-      }
+      AFRAME.registerComponent('animation-control', {
+        schema: {default: ''},
+        init() {
+          this.el.addEventListener("click", (e)=> {
+          this.el.setAttribute("animation-mixer", "clip", "slake") 
+          })
+        }
+      });
     </script>
     <style>
       .arjs-loader {
@@ -31,11 +36,12 @@
 </head>
     <body style='margin : 0px; overflow: hidden;'>
       <div class="arjs-loader">
-        <button onclick="slake()">Test2</button>
         <p>初次載入會花費較長時間，請耐心等候。</p>
         <div class="loader" id="test"></div>
       </div> 
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+        <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+                 vr-mode-ui="enabled: false;"
+                 renderer="logarithmicDepthBuffer: true; precision: high;">
             <a-marker type='pattern' url='pattern-I.patt'>
               <a-entity id ="cake" 
                         position="0 0 0" 
