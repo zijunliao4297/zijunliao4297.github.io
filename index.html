@@ -19,8 +19,10 @@
     //   }
     // });
 
-    var marker = document.querySelector('anchor');
-    marker.addEventListener("markerFound", (e) => { vibrate() })
+    var marker = document.querySelector('a-marker');
+    marker.addEventListener("markerFound", (e) => {
+       vibrate();
+     });
 
     function vibrate() {
       if (("vibrate" in navigator)) navigator.vibrate(100);
