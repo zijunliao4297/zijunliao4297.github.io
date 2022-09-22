@@ -22,7 +22,7 @@
       tick: function () {
         if (this.marker.object3D.visible && !this.visible) {
           // vibrate();
-          this.cake.setAttribute("animation-mixer", "clip: slake;"); 
+          this.cake.setAttribute("animation-mixer", {clip: 'slake', loop: 'once'}); 
           this.visible = true; // make sure it plays only once per visible
         } else if (!this.marker.object3D.visible) {
           this.visible = false;
