@@ -13,7 +13,7 @@
     AFRAME.registerComponent('cake', {
       init: function () {
         this.marker = document.querySelector('a-marker');
-        this.cake = document.querySelector('#cake');
+        this.cake = document.getElementById('cake');
         this.cake.addEventListener('slake', function () {
           vibrate();
           cake.setAttribute('animation-mixer', {
