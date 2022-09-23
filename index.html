@@ -16,13 +16,13 @@
         this.cake = document.querySelector('#cake');
         this.cake.addEventListener('slake', function(){
           vibrate();
-          this.cake.setAttribute("animation-mixer", {clip: 'slake', loop: 'once'}); 
+          // this.cake.setAttribute("animation-mixer", {clip: 'slake', loop: 'once'}); 
         });
         this.visible = false;
       },
       tick: function () {
         if (this.marker.object3D.visible && !this.visible) {
-          vibrate();
+          // vibrate();
           this.visible = true; // make sure it plays only once per visible
         } else if (!this.marker.object3D.visible) {
           this.visible = false;
@@ -50,7 +50,7 @@
     }
 
     button {
-      background-color: #F54CA0;
+      background-color: #FCA540;
       border: none;
       color: white;
       padding: 16px 32px;
@@ -71,7 +71,8 @@
   <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true; precision: high;">
     <a-marker type='pattern' url='pattern-I.patt' id="anchor">
-      <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity>
+      <!-- <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity> -->
+      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity>
     </a-marker>
   </a-scene>
   <script>
