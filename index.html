@@ -6,6 +6,7 @@
   <title>Birthday Matcha Cake</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
   <script>
     // var scene = document.querySelector('a-scene');
     // const cake = document.querySelector('#cake');
@@ -54,7 +55,7 @@
     }
 
     button {
-      background-color: #A5F40C;
+      background-color: #AF40C5;
       border: none;
       color: white;
       padding: 16px 32px;
@@ -76,8 +77,8 @@
     renderer="logarithmicDepthBuffer: true; precision: high;">
     <a-marker type='pattern' url='pattern-I.patt' id="anchor">
       <!-- <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity> -->
-      <!-- <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(matcha_cake.glb)" animation-mixer="clip: slake; loop: repeat;" cake></a-entity> -->
-      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="url(fox.glb)" animation-mixer="clip: Take 001; loop: repeat;" cake></a-entity>
+      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(matcha_cake.glb)" animation-mixer="clip: slake; loop: repeat;" cake></a-entity>
+      <!-- <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="1 1 1" gltf-model="url(fox.glb)" animation-mixer="clip: Take 001; loop: repeat;" cake></a-entity> -->
     </a-marker>
   </a-scene>
   <script>
