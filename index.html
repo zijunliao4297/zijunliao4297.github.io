@@ -54,7 +54,7 @@
     }
 
     button {
-      background-color: #A5F40C;
+      background-color: #4A5F0C;
       border: none;
       color: white;
       padding: 16px 32px;
@@ -76,8 +76,7 @@
     renderer="logarithmicDepthBuffer: true; precision: high;">
     <a-marker type='pattern' url='pattern-I.patt' id="anchor">
       <!-- <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity> -->
-      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(cake.glb)"
-        animation-mixer="clip: slake;" cake></a-entity>
+      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: slake; loop: repeat" cake></a-entity>
     </a-marker>
   </a-scene>
   <script>
@@ -99,7 +98,7 @@
         for (const amplitude of pcmData) { sumSquares += amplitude * amplitude; }
         let dB = Math.sqrt(sumSquares / pcmData.length);
         // volumeMeterEl.value = dB;
-        if (dB > 0.15) {
+        if (dB > 0.2) {
           console.log(dB);
           cakeModel.emit('slake');
         }
