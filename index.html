@@ -20,8 +20,13 @@
           cake.setAttribute('animation-mixer', {
             clip: 'slake',
             loop: 'once',
-            crossFadeDuration: 0.2,
+            crossFadeDuration: 0.2
           });
+          window.setTimeout(function(){
+            cake.setAttribute('animation-mixer', {
+              timeScale: 0
+          });
+          },50);
         });
         this.visible = false;
       },
