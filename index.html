@@ -14,9 +14,13 @@
       init: function () {
         this.marker = document.querySelector('a-marker');
         this.cake = document.querySelector('#cake');
-        this.cake.addEventListener('slake', function(){
+        this.cake.addEventListener('slake', function () {
           vibrate();
-          // this.cake.setAttribute("animation-mixer", {clip: 'slake', loop: 'once'}); 
+          cake.setAttribute('animation-mixer', {
+            clip: 'slake',
+            loop: 'repeat',
+            crossFadeDuration: 0.4,
+          })
         });
         this.visible = false;
       },
@@ -50,7 +54,7 @@
     }
 
     button {
-      background-color: #FCA540;
+      background-color: #F40CA5;
       border: none;
       color: white;
       padding: 16px 32px;
@@ -72,7 +76,8 @@
     renderer="logarithmicDepthBuffer: true; precision: high;">
     <a-marker type='pattern' url='pattern-I.patt' id="anchor">
       <!-- <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity> -->
-      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity>
+      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(cake.glb)"
+        animation-mixer="clip: idle;" cake></a-entity>
     </a-marker>
   </a-scene>
   <script>
@@ -94,7 +99,7 @@
         for (const amplitude of pcmData) { sumSquares += amplitude * amplitude; }
         let dB = Math.sqrt(sumSquares / pcmData.length);
         // volumeMeterEl.value = dB;
-        if (dB > 0.2) {
+        if (dB > 0.15) {
           console.log(dB);
           cakeModel.emit('slake');
         }
