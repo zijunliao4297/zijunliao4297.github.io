@@ -20,13 +20,8 @@
           cake.setAttribute('animation-mixer', {
             clip: 'slake',
             loop: 'once',
-            crossFadeDuration: 0.2
+            crossFadeDuration: 0.2,
           });
-          // window.setTimeout(function(){
-          //   cake.setAttribute('animation-mixer', {
-          //     timeScale: 0
-          // });
-          // },300);
         });
         this.visible = false;
       },
@@ -60,7 +55,7 @@
     }
 
     button {
-      background-color: #CAF405;
+      background-color: #AF40C5;
       border: none;
       color: white;
       padding: 16px 32px;
@@ -81,8 +76,8 @@
   <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true; precision: high;">
     <a-marker type='pattern' url='pattern-I.patt' id="anchor">
-      <!-- <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(cake.glb)" animation-mixer="clip: idle;" cake></a-entity> -->
-      <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(matcha_cake.glb)" animation-mixer="clip: idle;" cake></a-entity>
+      <a-entity id="cake" position="0 -1 12" rotation="-90 0 0" scale="15 15 15" gltf-model="url(matcha_cake.glb)" animation-mixer="clip: idle;" cake></a-entity>
+      <!-- <a-entity id="cake" position="0 0 0" rotation="0 0 0" scale="15 15 15" gltf-model="url(matcha_cake.glb)" animation-mixer="clip: idle;" cake></a-entity> -->
     </a-marker>
   </a-scene>
   <script>
